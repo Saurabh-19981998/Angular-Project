@@ -1,0 +1,14 @@
+.global-container {
+    border : 2px dashed red;
+    padding: 10px;
+    margin: 20px;
+}
+
+h3 {
+    color: green;
+    text-decoration: underline;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+}

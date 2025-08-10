@@ -230,9 +230,71 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title() }}</h1>
+      <h1>Hello, Angular students, {{ title }}</h1>
+
+      <app-button
+      [buttonText]="'Click me!'"
+      (buttonClicked) = "handleButtonClick($event)">
+      </app-button>
+
+      <app-button
+        [buttonText]="'Don\'t Click Me!'"
+        (buttonClicked)="handleButtonClick($event)">
+      </app-button>
+      <h2></h2>
+      <app-user-card [userName]="'John Doe'"></app-user-card>
+
+      <app-user-card
+        [userName]="'Jane Smith'"
+        [userEmail]="'jane.smith@email.com'"
+        [userRole]="'Senior Developer'">
+      </app-user-card>
+
+      <hr>
+      <div class = "app-special-text">This is the selector class</div>
+      <p class="app-special-text">And this paragraph too!</p>
+
+      <p appHighlight>This text should be highlighted!</p>
+      <button appHighlight>Click Me!</button>
+      <span appHighlight>And this span too!</span>
+
+      <h3>A plain H3 outside any component</h3>
+      <p>A plain paragraph outside any component.</p>
+
+      <hr>
+
+      <app-global-style></app-global-style>
+
+      <app-card>
+        <h3> This is some content</h3>
+        <p>Content projection happening over here</p>
+        <ul>
+          <li>
+            item 1
+          </li>
+          <li>
+            item 2
+          </li>
+        </ul>
+      </app-card>
+      
+      <h1 style="text-align: center">Host Binding Example</h1>
+      <app-hover-card></app-hover-card>
+
+      <h1 style="text-align: center;">Component Lifecycle Demo</h1>
+
+      <div style="text-align: center; margin: 20px;">
+        <button (click)="changeMessage()">Change Message</button>
+        <button (click)="toggleLogger()">Toggle Logger Component</button>
+      </div>
+
+      <app-logger *ngIf="showLoggerComponent" [message]="messageFromParent"></app-logger>
+
+      <app-parent></app-parent>
+
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
+
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
@@ -339,4 +401,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
