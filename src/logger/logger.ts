@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChange, SimpleChanges } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-logger',
@@ -43,6 +43,6 @@ export class Logger implements OnInit, OnChanges, OnDestroy{
 
     ngOnDestroy(): void {
        console.log('Logger: ngOnDestroy called.');
-    alert('Logger component is being destroyed!');
+    //alert('Logger component is being destroyed!');
     }
 }
