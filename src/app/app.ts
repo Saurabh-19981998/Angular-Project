@@ -8,10 +8,18 @@ import { HoverCard } from "../hover-card/hover-card";
 import { Logger } from '../logger/logger';
 import { CommonModule } from '@angular/common';
 import { Parent } from '../parent/parent';
+import { FocusInput } from "../focus-input/focus-input";
+import { ViewChildChild } from "../view-child-child/view-child-child";
+import { ViewChildParent } from '../view-child-parent/view-child-parent';
+import { ContentQueryItem } from '../content-query-item/content-query-item';
+import { ContentQueryParent } from '../content-query-parent/content-query-parent';
+import { QueryOptionsParent } from '../query-options-parent/query-options-parent';
+import { QueryOptionsChild } from '../query-options-child/query-options-child';
+import { AutofocusInput } from '../autofocus-input/autofocus-input';
 
 @Component({
   selector: 'app-root',
-  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent],
+  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
