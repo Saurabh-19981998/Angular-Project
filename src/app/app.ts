@@ -16,10 +16,11 @@ import { ContentQueryParent } from '../content-query-parent/content-query-parent
 import { QueryOptionsParent } from '../query-options-parent/query-options-parent';
 import { QueryOptionsChild } from '../query-options-child/query-options-child';
 import { AutofocusInput } from '../autofocus-input/autofocus-input';
+import { ViewContainerExample } from '../view-container-example/view-container-example';
 
 @Component({
   selector: 'app-root',
-  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput],
+  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput,ViewContainerExample],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
