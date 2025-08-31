@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Element Test</title>
+  <script src="dist/my-first-angular-app/polyfills.js"></script>
+  <script src="dist/my-first-angular-app/main.js"></script>
+</head>
+<body>
+  <h1>This is a simple HTML page.</h1>
+  <p>Below is our Angular component, used as a custom element.</p>
+
+  <my-greeting-element name="World"></my-greeting-element>
+
+  <br>
+
+  <my-greeting-element id="another-greeting" name="Instructor"></my-greeting-element>
+
+  <script>
+    // Listen for the custom event emitted by our Angular element
+    const myElement = document.querySelector('#another-greeting');
+    myElement.addEventListener('greet', () => {
+      alert('Event was fired from the Angular component!');
+    });
+  </script>
+</body>
+</html>

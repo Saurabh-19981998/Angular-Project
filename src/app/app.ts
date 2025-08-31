@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, DoBootstrap, Injector, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserCardComponent } from '../user-card/user-card';
 import { GlobalStyleComponent } from "../global-style/global-style";
@@ -17,14 +17,19 @@ import { QueryOptionsParent } from '../query-options-parent/query-options-parent
 import { QueryOptionsChild } from '../query-options-child/query-options-child';
 import { AutofocusInput } from '../autofocus-input/autofocus-input';
 import { ViewContainerExample } from '../view-container-example/view-container-example';
+import { createCustomElement } from '@angular/elements';
+import { MyGreeting } from '../my-greeting/my-greeting';
+import { SignalCounter } from '../signal-counter/signal-counter';
 
 @Component({
   selector: 'app-root',
-  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput,ViewContainerExample],
+  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput,ViewContainerExample, SignalCounter],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements DoBootstrap{
+  constructor(private injector: Injector) {}
+  
   title = 'my-first-angualr-app';
 
   handleButtonClick(message: string)
@@ -46,7 +51,13 @@ export class App {
     this.showLoggerComponent = !this.showLoggerComponent;
   }
 
+   ngDoBootstrap() {
+    // Create the custom element class from the Angular component.
+    const MyGreetingElement = createCustomElement(MyGreeting, { injector: this.injector });
 
+    // Define the custom element with the browser's registry.
+    customElements.define('my-greeting-element', MyGreetingElement);
+  }
 
 
 }
