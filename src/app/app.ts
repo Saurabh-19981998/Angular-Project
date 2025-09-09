@@ -20,10 +20,14 @@ import { ViewContainerExample } from '../view-container-example/view-container-e
 import { createCustomElement } from '@angular/elements';
 import { MyGreeting } from '../my-greeting/my-greeting';
 import { SignalCounter } from '../signal-counter/signal-counter';
+import { EffectDemo } from '../effect-demo/effect-demo';
+import { LinkedSignalDemo } from "../linked-signal-demo/linked-signal-demo";
+import { CustomEqualityDemo } from "../custom-equality-demo/custom-equality-demo";
+import { UserProfile } from "../user-profile/user-profile";
 
 @Component({
   selector: 'app-root',
-  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem,ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput,ViewContainerExample, SignalCounter],
+  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem, ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput, ViewContainerExample, SignalCounter, EffectDemo, LinkedSignalDemo, CustomEqualityDemo, UserProfile],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

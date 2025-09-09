@@ -1,0 +1,44 @@
+<div class = "profile-card">
+
+    <h1>Welcome , {{username()}}</h1>
+
+    <hr>
+
+    <p> Save button is currently : <strong>- {{isValidatedId() ? 'Enabled' : 'Disabled'}}</strong></p>
+
+    <button 
+    [disabled]="!isValidatedId()" 
+    (click)="saveChanges()">
+    Save Profile
+    </button>
+
+    <hr>
+
+    <button (click)="toggleAdmin()">
+        Toggle Admin Status
+    </button>
+
+    <P>Current status: <strong>{{isAdmin() ? 'Admin' : 'Regular User'}}</strong></P>
+
+    <hr>
+
+    @if(isAdmin()) {
+        <h2>Admin Section</h2>
+        <p class="admin-text">You have a special privileage</p>
+    }@else {
+        <h2>User Dashboard</h2>
+        <p class="user-text">You are a regular user</p>
+    }
+
+    <hr>
+
+    <h3> Your badges</h3>
+
+    <ul>
+    @for (badge of badges(); track badge.id) {
+      <li>{{ badge.name }}</li>
+    }
+  </ul>
+
+
+</div>
