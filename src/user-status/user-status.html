@@ -1,0 +1,15 @@
+<div class="status-card">
+  <h2>User Status: <strong>{{ userStatus() }}</strong></h2>
+
+  @if (userStatus() === 'online') {
+    <p class="status online">You are online and ready to chat!</p>
+  } @else if (userStatus() === 'away') {
+    <p class="status away">You are away right now.</p>
+  } @else if (userStatus() === 'busy') {
+    <p class="status busy">You are busy, do not disturb.</p>
+  } @else {
+    <p class="status offline">You are offline.</p>
+  }
+
+  <button (click)="changeStatus()">Change Status</button>
+</div>

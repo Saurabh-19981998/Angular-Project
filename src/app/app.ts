@@ -24,10 +24,15 @@ import { EffectDemo } from '../effect-demo/effect-demo';
 import { LinkedSignalDemo } from "../linked-signal-demo/linked-signal-demo";
 import { CustomEqualityDemo } from "../custom-equality-demo/custom-equality-demo";
 import { UserProfile } from "../user-profile/user-profile";
+import { ThemeSwitcher } from "../theme-switcher/theme-switcher";
+import { EventDemo } from "../event-demo/event-demo";
+import { Login } from "../login/login";
+import { Counter } from "../counter/counter";
+import { UserStatusComponent } from "../user-status/user-status";
 
 @Component({
   selector: 'app-root',
-  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem, ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput, ViewContainerExample, SignalCounter, EffectDemo, LinkedSignalDemo, CustomEqualityDemo, UserProfile],
+  imports: [UserCardComponent, GlobalStyleComponent, Button, Card, HoverCard, Logger, CommonModule, Parent, FocusInput, ViewChildChild, ViewChildParent, ContentQueryItem, ContentQueryParent, QueryOptionsParent, QueryOptionsChild, AutofocusInput, ViewContainerExample, SignalCounter, EffectDemo, LinkedSignalDemo, CustomEqualityDemo, UserProfile, ThemeSwitcher, EventDemo, Login, Counter, UserStatusComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -35,6 +40,8 @@ export class App implements DoBootstrap{
   constructor(private injector: Injector) {}
   
   title = 'my-first-angualr-app';
+
+  initialCount = 18;
 
   handleButtonClick(message: string)
   {

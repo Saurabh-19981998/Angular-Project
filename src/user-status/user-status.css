@@ -1,0 +1,26 @@
+.status-card { 
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  border-radius: 8px; 
+  max-width: 500px; 
+  margin: 20px auto; 
+  text-align: center;
+}
+button { 
+  margin-top: 15px; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  background-color: #007bff; 
+  color: white; 
+}
+.status { 
+  padding: 10px; 
+  border-radius: 5px; 
+  font-weight: bold;
+}
+.online { background-color: #d4edda; color: #155724; }
+.away { background-color: #fff3cd; color: #856404; }
+.busy { background-color: #f8d7da; color: #721c24; }
+.offline { background-color: #e2e3e5; color: #383d41; }

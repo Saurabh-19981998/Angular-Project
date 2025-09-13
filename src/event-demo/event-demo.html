@@ -1,0 +1,25 @@
+<div class="event-card">
+  <h3>Event Binding Demo</h3>
+
+  <hr>
+
+  <button (click)="incrementCount()">
+    Click Me (Count: {{ buttonClicks }})
+  </button>
+
+  <hr>
+
+  <label for="keyInput">Type something to see your key presses:</label>
+  <input id="keyInput" type="text" (keyup)="onKeyUp($event)" placeholder="Type here...">
+  <p>Last key pressed: <strong>{{ lastKeyPressed }}</strong></p>
+
+  <hr>
+
+  <label for="enterInput">Press 'Enter' to trigger an alert:</label>
+  <input id="enterInput" type="text" (keyup.enter)="onEnterPress()" placeholder="Type and press Enter...">
+
+  <hr>
+
+  <p>Clicking this link will not change the URL because we will prevent default behavior.</p>
+  <a href="/some-page" (click)="showOverlay($event)">Click this link</a>
+</div>
